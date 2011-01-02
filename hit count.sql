@@ -1,0 +1,5 @@
+SELECT (
+FLOOR( TIMESTAMP /3600 ) *3600
+) AS t, COUNT( id ) AS count
+FROM hits
+GROUP BY t

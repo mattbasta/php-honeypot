@@ -1,0 +1,40 @@
+PHP Honeypot
+
+For my cyber security class, I chose to perform an analysis of comment spam.
+To do this, I built this honeypot in PHP. I linked it up from a bunch of
+sites and examined the results.
+
+Setup
+-----
+
+This is designed to be run in Interchange (~v0.2). Newer versions are likely
+incompatible.
+
+Also, a version of Cloud (circa early 2010) is required as a library.
+
+Results
+-------
+
+After about two months of running, the data showed a few things. First, a good
+number of spammers search Google for topics that would be postable. I don't
+have any of the queries that were used, however, the honeypot did store the
+keywords that were used on each page. Spambots did not target sites that
+included common phrases such as, "Just another Wordpress weblog."
+
+Another interesting finding was that an initial "probe" spider was often used
+to find pages on a site, while other bots were sent to leave the spammy
+comments. This is indicative of botnet activity.
+
+From a technical standpoint, the bots were incapable of completing even the
+simplest of tasks. For instance, requiring the bot to fill "orange" into a
+textbox (even when the box is named "orange") proved too complex, despite
+its popularity.
+
+Bots will attempt to fill in any text field they are presented with. If the
+field is not recognized, it is filled with random characters. If the field
+is an email field, a randomly generated email address is created. I was not
+able to collect enough information to detect a pattern in the email addresses
+generated.
+
+
+
